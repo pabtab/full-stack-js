@@ -6,6 +6,7 @@ import { store } from '../store'
 import Dashboard from './Dashboard'
 import { history } from '../store/history'
 import Navigation from './Navigation'
+import TaskDetail from './TaskDetail'
 
 const Main = () => {
   return (
@@ -17,6 +18,11 @@ const Main = () => {
             exact 
             path="/dashboard"
             render={() => <Dashboard />}
+          />
+          <Route
+            exact
+            path="/task/:id"
+            render={({match}) => <TaskDetail match={match}/>}
           />
         </div>
       </Provider>
