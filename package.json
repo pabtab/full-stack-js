@@ -9,7 +9,8 @@
     "dev": "webpack-dev-server --open",
     "initialize": "babel-node src/server/initialize-db",
     "server": "babel-node src/server/server",
-    "server-test": "babel-node src/server/server.spec"
+    "server-test": "babel-node src/server/server.spec",
+    "start-dev": "concurrently \"yarn server\" \"yarn dev\""
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
     "history": "^4.10.1",
     "mongodb": "^3.5.6",
     "react": "^16.13.1",

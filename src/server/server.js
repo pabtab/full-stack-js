@@ -8,9 +8,11 @@ let app = express()
 
 app.listen(port, console.log('server listening', port))
 
-/* app.get('/', (req, res) => {
-  res.send('Hello pabtab')
-}) */
+app.get('/:id(\\d+)', (req, res) => {
+  var id = req.params.id;
+  res.end("Received parameter:"+id);
+  console.log('id='+id);
+})
 
 app.use(
   cors(),
@@ -43,13 +45,13 @@ export const updateTask = async task => {
   }
 }
 
-app.post('task/new', async (req, res) => {
+app.post('/task/new', async (req, res) => {
   let task = req.body.task
   await addNewTask(task)
   res.status(200).send()
 });
 
-app.post('task/update', async (req, res) => {
+app.post('/task/update', async (req, res) => {
   let task = req.body.task
   await updateTask(task)
   res.status(200).send()
