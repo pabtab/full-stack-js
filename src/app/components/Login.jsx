@@ -9,17 +9,17 @@ export const Login = ({
   authenticated
 }) => {
   return (
-    <div>
+    <div className="card p-3 col-6">
       <h2>Please Login</h2>
       <form onSubmit={authenticateUser} noValidate>
-        <input type="text" name="username" placeholder="Username" defaultValue="Dev"/>
-        <input type="password" name="password" id="pass" placeholder="Password" defaultValue=""/>
+        <input className="form-control" type="text" name="username" placeholder="Username" defaultValue="Dev"/>
+        <input className="form-control mt-2" type="password" name="password" id="pass" placeholder="Password" defaultValue=""/>
         {
           authenticated === mutations.NOT_AUTHENTICATE 
           ? <p>Login Incorrect</p>
           : null
         }
-        <button type="submit">Login</button>
+        <button className="form-control mt-2 btn btn-primary" type="submit">Login</button>
       </form>
     </div>
   )
