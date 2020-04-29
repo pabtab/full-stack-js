@@ -8,7 +8,7 @@ import Dashboard from './Dashboard'
 import { history } from '../store/history'
 import Navigation from './Navigation'
 import TaskDetail from './TaskDetail'
-import Login from './login'
+import Login from './Login'
 
 const RouteGuard = Component => ({match}) => {
   console.info('Route guard', match)
